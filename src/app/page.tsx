@@ -3,6 +3,7 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import HeroSection from "@/components/home/HeroSection";
 import ScheduleAdvantage from "@/components/home/ScheduleAdvantage";
+import CraftVideoBanner from "@/components/home/CraftVideoBanner";
 import FeaturedCollection from "@/components/home/FeaturedCollection";
 import PuneOutletSpotlight from "@/components/home/PuneOutletSpotlight";
 
@@ -13,6 +14,7 @@ export default function HomePage() {
       <main className="flex-1">
         <HeroSection />
         <ScheduleAdvantage />
+        <CraftVideoBanner />
         <FeaturedCollection />
         <PuneOutletSpotlight />
       </main>
