@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifyRazorpaySignature } from "@/lib/razorpay";
+import { verifyRazorpaySignature, RAZORPAY_KEY_SECRET } from "@/lib/razorpay";
 import { getOrderById, updateOrderStatus, saveOrder } from "@/lib/orders-store";
 
 export async function POST(req: NextRequest) {
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const keySecret = process.env.RAZORPAY_KEY_SECRET;
+    const keySecret = process.env.RAZORPAY_KEY_SECRET || RAZORPAY_KEY_SECRET;
     let paymentVerified = false;
 
     if (isDemoPayment || order.payment.isDemoTransaction) {
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
           {
             error:
-              "RAZORPAY_KEY_SECRET is not configured on the server. Please provide it in .env.local.",
+              "RAZORPAY_KEY_SECRET is not configured on the server.",
           },
           { status: 500 }
         );

@@ -41,31 +41,30 @@ export default function CraftVideoBanner() {
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Background Dark Overlay Layers for Cinematic Readability & Seamless Transition */}
-      <div className="absolute inset-0 bg-black/60 backdrop-contrast-105" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#121110] via-transparent to-[#121110]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#121110]/90 via-black/30 to-[#121110]/90" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(0,0,0,0.85)_100%)] pointer-events-none" />
+      {/* Background Overlay - Softened to make video brighter and more vivid */}
+      <div className="absolute inset-0 bg-black/25" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#121110]/85 via-transparent to-[#121110]/85 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(18,17,16,0.6)_100%)] pointer-events-none" />
 
       {/* Centered One-Line Content Overlay */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-24 flex flex-col items-center justify-center text-center space-y-4 sm:space-y-6">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-24 flex flex-col items-center justify-center text-center space-y-3 sm:space-y-4">
         <motion.span
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-[#ABC438] drop-shadow-md"
+          className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-[#ABC438]/75 drop-shadow-sm"
         >
           Live Barista Counter
         </motion.span>
 
-        {/* Little Text - Exactly One Line */}
+        {/* Soft, slightly dull muted text */}
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-normal tracking-tight leading-[1.12] sm:leading-[1.1] drop-shadow-2xl max-w-5xl"
+          className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white/75 font-normal tracking-tight leading-[1.12] sm:leading-[1.1] drop-shadow-lg max-w-5xl"
         >
           Every shot pulled with precision, ready the moment you arrive.
         </motion.h2>

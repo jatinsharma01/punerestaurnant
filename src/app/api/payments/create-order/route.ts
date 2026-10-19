@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getRazorpayClient } from "@/lib/razorpay";
+import { getRazorpayClient, RAZORPAY_KEY_ID } from "@/lib/razorpay";
 import { validateAndCalculateServerOrder } from "@/lib/pricing";
 import { validateCustomerName, validateIndianMobileNumber, validateEmail } from "@/lib/validation";
 import { saveOrder } from "@/lib/orders-store";
@@ -137,7 +137,7 @@ export async function POST(req: NextRequest) {
       razorpayOrderId,
       amountPaise: calc.amountInPaise,
       currency: "INR",
-      keyId: process.env.RAZORPAY_KEY_ID || "rzp_test_placeholder",
+      keyId: process.env.RAZORPAY_KEY_ID || RAZORPAY_KEY_ID,
       isDemoMode,
       outletName: PRIMARY_PUNE_OUTLET.name,
       pickupDate: booking.pickupDate,
