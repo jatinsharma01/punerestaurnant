@@ -2,6 +2,7 @@ import React from "react";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import HeroSection from "@/components/home/HeroSection";
+import QuickPicksSection from "@/components/home/QuickPicksSection";
 import ScheduleAdvantage from "@/components/home/ScheduleAdvantage";
 import CraftVideoBanner from "@/components/home/CraftVideoBanner";
 import FeaturedCollection from "@/components/home/FeaturedCollection";
@@ -13,9 +14,10 @@ export default function HomePage() {
       <SiteHeader transparent />
       <main className="flex-1">
         <HeroSection />
+        <QuickPicksSection />
         <ScheduleAdvantage />
-        <CraftVideoBanner />
         <FeaturedCollection />
+        <CraftVideoBanner />
         <PuneOutletSpotlight />
       </main>
       <SiteFooter />

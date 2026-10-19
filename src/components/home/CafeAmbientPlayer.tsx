@@ -65,7 +65,7 @@ export default function CafeAmbientPlayer() {
   const currentPreset = presets[activePreset] || presets[0];
 
   return (
-    <div className="w-full max-w-4xl mx-auto backdrop-blur-xl bg-black/60 rounded-2xl p-4 sm:p-5 shadow-2xl text-left transition-all duration-300">
+    <div className="w-full max-w-4xl mx-auto backdrop-blur-xl bg-black/55 hover:bg-black/60 rounded-2xl p-3.5 sm:p-5 shadow-2xl text-left transition-all duration-300">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Left: Play/Pause button + Track Info */}
         <div className="flex items-center gap-4 w-full sm:w-auto">
